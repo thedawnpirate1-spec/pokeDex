@@ -8,11 +8,12 @@
     <script defer src="script.js"></script>
     <link href="./styles/mainStyle.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="./images/icons/favIcon.png">
-    <script src="./scripts/template.js"></script>
+    <script defer src="./scripts/template.js"></script>
+    <script defer src="./scripts/dialog.js"></script>
     <link rel="stylesheet" href="./styles/cardStyle.css">
 </head>
 
-<body>
+<body onload="init()">
     <header>
         <div class="maxSize">
             <div class="headerDiv">
@@ -27,36 +28,27 @@
         </div>
     </header>
     <main class="mainStyle">
-        <img src="./assets/images/master_ball_background.png" alt="master ball background" >
+        <img src="./assets/images/master_ball_background.png" alt="master ball background">
         <div class="maxSize">
             <section id="mainContent" class="content">
-                <div id="itemCard" class="itemCard" onclick="openDialog(${[i]})">
-                    <div class="cardHeader">
-                        <p>#NR</p>
-                        <p>name</p>
-                    </div>
-                    <div class="cardImg">
-                        <img src="" alt="" srcset="">
-                    </div>
-                    <div class="elemntStyle">
-                        <img src="" alt="" srcset="">
-                    </div>
-                </div>
+
             </section>
         </div>
+        <dialog id="dialogFunction" onclick="closeDialog()" open="">
+            <div id="dialogContent" onclick=" protectionCloseDialog(event)">
+                
+            </div>
+        </dialog>
+
     </main>
     <footer>
         <div class="maxSize">
             <div class="footerContent">
-            <img src="" alt="" srcset="">
-            <span>impressum</span>
+                <img src="" alt="" srcset="">
+                <span>impressum</span>
             </div>
         </div>
     </footer>
 </body>
-<dialog id="dialogFunction" onclick="closeDialog()">
-            <div id="dialogContent" onclick=" protectionCloseDialog(event)">
-            </div>
-        </dialog>
 
 </html>

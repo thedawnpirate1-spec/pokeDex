@@ -1,50 +1,39 @@
+let myPokeDex = [];
+let currentImage = 0;
+let myPhotoDiv = document.getElementById("mainContent");
 
 
-let myDialogOpener = document.getElementById("dialogFunction");
-
-function init(){
-
+async function init(){
+    await getCharacters();
+    renderGalaray ();
 }
 
-function openDialog(i){  
-    currentImage = i;         
-    myDialogContent.innerHTML = ` <div id="nameAndClose">
-                <h2 id="dialogFotoName">${myPhotoNames[i]}</h2> 
-                <button id="closeBtn" onclick="closeDialog()">close</button>
-            </div>
-            <img src='${myPhotosArray[i]}'></img>
-            <div>
-                <button onclick="previousPicture()">Links</button>
-                <div>Page:${currentImage +1}/12</div>
-                <button onclick="nextPicture()">Rechts</button>
-            </div>`
-    myDialogOpener.showModal();
+
+
+async function getCharacters(){
+
+    try{
+        const pokeCard =  await fetch("https://pokeapi.co/api/v2/pokemon?limit=20");
+        let cardSet=  await pokeCard.json();
+        for(let i = 0; i< cardSet.length; i++){
+            console.log(pokeCard);
+            const pokeCardDetails =  await fetch(cardSet[i].url);
+            let pokeCardDetailsJson =  await pokeCardDetails.json();
+            myPokeDex.push(pokeCardDetailsJson);
+        }
+    }
+    catch(error){
+        console.error("fetch-fehler");
+        if (container) {
+            container.innerHTML = "<p>SCHEIß SERVER</p>";
+        }
+    }
+    renderGalaray();
 }
 
-function closeDialog(){
-    myDialogOpener.close();
-} 
+function renderGalaray (){
 
-function protectionCloseDialog(event){
-    event.stopPropagation();
+    for( let i = 0; i <myPokeDex.length; i++){
+        myPhotoDiv.innerHTML += getHtmlForGalaryObject(i); 
 }
-
-function nextCard(){
-currentCard = currentCard+1; 
-    if(currentImage < myPhotosArray.length){
-        openDialog(currentImage)
-    }
-    else {
-        openDialog(0);
-    }
-}
-
-function previousCard(){
-currentCard = currentCard-1; 
-    if(currentCard >=0 ){
-        openDialog(currentCard);
-    }
-    else {
-        openDialog(myPhotosArray.length-1);
-    }
 }

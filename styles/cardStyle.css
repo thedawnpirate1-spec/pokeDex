@@ -1,0 +1,38 @@
+.itemCard {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.cardHeader {
+    display: flex;
+    flex-direction: row;
+    padding: 12px;
+    gap: 8px;
+}
+
+.cardHeader p:first-child {
+    text-align: start;
+    margin: 0;
+}
+
+.cardHeader p:nth-child(2) {
+    text-align: center;
+    margin: 0;
+}
+
+.cardHeader img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.cardHeader div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+}
+
