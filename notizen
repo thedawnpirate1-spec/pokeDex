@@ -1,0 +1,31 @@
+TO DO's = 
+html :
+header 
+logo        suchleiste
+    max content
+        div itemCard
+                div header #Nr name
+                div img
+                div spezi div
+                                dialog
+                                    div header #Nr name
+                                        div img
+                                        div spezi div
+                                        div chategory bar (main , stats , evo chain )   
+                                            main
+                                            <p>height
+                                            <p>wieght
+                                            <p>
+
+footer
+logo impressum 
+
+
+
+
+js:
+template + render funiton 
+function um api zu laden und als schleife zu rendern
+
+
+css : 

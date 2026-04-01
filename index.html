@@ -1,14 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script defer src="script.js"></script>
-    <link href="./styles/mainStyle.css">
+    <link href="./styles/mainStyle.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./images/icons/favIcon.png">
     <script src="./scripts/template.js"></script>
+    <link rel="stylesheet" href="./styles/cardStyle.css">
 </head>
+
 <body>
-    
+    <header>
+        <div class="maxSize">
+            <div class="headerDiv">
+                <div class="headerImgDiv">
+                    <img src="./assets/images/Pokedex_Logo.png" alt="Pokemondex logo">
+                </div>
+                <div class="searchDiv">
+                    <input id="searchBar" type="text">
+                    <button onclick="dexSearch()">search now</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="mainStyle">
+        <img src="./assets/images/master_ball_background.png" alt="master ball background" >
+        <div class="maxSize">
+            <section id="mainContent" class="content">
+                <div id="itemCard" class="itemCard" onclick="openDialog(${[i]})">
+                    <div class="cardHeader">
+                        <p>#NR</p>
+                        <p>name</p>
+                    </div>
+                    <div class="cardImg">
+                        <img src="" alt="" srcset="">
+                    </div>
+                    <div class="elemntStyle">
+                        <img src="" alt="" srcset="">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="maxSize">
+            <div class="footerContent">
+            <img src="" alt="" srcset="">
+            <span>impressum</span>
+            </div>
+        </div>
+    </footer>
 </body>
+<dialog id="dialogFunction" onclick="closeDialog()">
+            <div id="dialogContent" onclick=" protectionCloseDialog(event)">
+            </div>
+        </dialog>
+
 </html>
