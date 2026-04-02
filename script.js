@@ -15,9 +15,10 @@ async function getCharacters(){
     try{
         const pokeCard =  await fetch("https://pokeapi.co/api/v2/pokemon?limit=20");
         let cardSet=  await pokeCard.json();
-        for(let i = 0; i< cardSet.length; i++){
-            console.log(pokeCard);
-            const pokeCardDetails =  await fetch(cardSet[i].url);
+        console.log(pokeCard);
+        for(let i = 0; i< cardSet.results.length; i++){
+            
+            const pokeCardDetails =  await fetch(cardSet.results[i].url);
             let pokeCardDetailsJson =  await pokeCardDetails.json();
             myPokeDex.push(pokeCardDetailsJson);
         }
@@ -31,9 +32,13 @@ async function getCharacters(){
     renderGalaray();
 }
 
-function renderGalaray (){
-
-    for( let i = 0; i <myPokeDex.length; i++){
-        myPhotoDiv.innerHTML += getHtmlForGalaryObject(i); 
-}
+function renderGalaray(){
+    let myCardDiv = document.getElementById("mainContent");
+    if (!myCardDiv) return;
+    
+    myCardDiv.innerHTML = "";
+    
+    for( let i = 0; i < myPokeDex.length; i++){
+        myCardDiv.innerHTML += getHtmlForGalaryObject(i); 
+    }
 }

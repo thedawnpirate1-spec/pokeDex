@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script defer src="script.js"></script>
-    <link href="./styles/mainStyle.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/mainStyle.css">
+    <link rel="stylesheet" href="./styles/cardStyle.css">
+    <link rel="stylesheet" href="./styles/dialogStyle.css">
     <link rel="icon" type="image/x-icon" href="./images/icons/favIcon.png">
     <script defer src="./scripts/template.js"></script>
     <script defer src="./scripts/dialog.js"></script>
-    <link rel="stylesheet" href="./styles/cardStyle.css">
+    
 </head>
 
 <body onload="init()">
@@ -28,18 +30,16 @@
         </div>
     </header>
     <main class="mainStyle">
-        <img src="./assets/images/master_ball_background.png" alt="master ball background">
         <div class="maxSize">
             <section id="mainContent" class="content">
 
             </section>
         </div>
-        <dialog id="dialogFunction" onclick="closeDialog()" open="">
+<dialog id="dialogFunction" onclick="closeDialog()">
             <div id="dialogContent" onclick=" protectionCloseDialog(event)">
                 
             </div>
         </dialog>
-
     </main>
     <footer>
         <div class="maxSize">
@@ -50,5 +50,7 @@
         </div>
     </footer>
 </body>
+        
+
 
 </html>

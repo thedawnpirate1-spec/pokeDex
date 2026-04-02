@@ -1,5 +1,29 @@
 TO DO's = 
 html :
+
+
+
+
+js:
+for schleifen :
+1.element! class"elementStyle" render platz!
+2.about ! class "MenuBtn" render platz/ id:bottom/aboutContent 
+3,stats! class "MenuBtn" render platz/ id:bottom /statsContent
+4.evo chain! class "MenuBtn" render platz/ id:bottom /evolutionContent
+
+
+css : 
+button styling
+
+
+
+
+DONE !!!!! : 
+
+
+dialog cart styleing 
+template + render funiton 
+function um api zu laden und als schleife zu rendern
 header 
 logo        suchleiste
     max content
@@ -19,13 +43,3 @@ logo        suchleiste
 
 footer
 logo impressum 
-
-
-
-
-js:
-template + render funiton 
-function um api zu laden und als schleife zu rendern
-
-
-css : 

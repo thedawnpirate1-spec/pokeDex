@@ -33,6 +33,6 @@ currentCard = currentCard-1;
         openDialog(currentCard);
     }
     else {
-        openDialog(myPhotosArray.length-1);
+        openDialog(myPokeDex.length-1);
     }
 }

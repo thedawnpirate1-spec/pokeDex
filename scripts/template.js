@@ -1,31 +1,40 @@
 function getHtmlForGalaryObject(i){
-    return
-    `
+    const pokemon = myPokeDex[i];
+    const name = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
+    const id = pokemon.id;
+    const imgUrl = pokemon.sprites.other["official-artwork"].front_default || pokemon.sprites.front_default;
+    const type = pokemon.types[0].type.name;
+
+    return `
     <div class="itemCard" onclick="openDialog(${i})">
-                    <div class="cardHeader">
-                        <p>#NR</p>
-                        <p>name</p>
-                    </div>
-                    <div class="cardImg">
-                        <img src="" alt="" srcset="">
-                    </div>
-                    <div class="elemntStyle">
-                        <img src="" alt="" srcset="">
-                    </div>
-                </div>
-    
+        <div class="cardHeader">
+            <p>#${id}</p>
+            <p>${name}</p>
+        </div>
+        <div class="cardImg">
+            <img src="${imgUrl}" alt="${name}">
+        </div>
+        <div class="elemntStyle">
+            <span class="typeBadge">${type}</span>
+        </div>
+    </div>
     `;
 }
 
-function getHtmlForDialog(){
-    return
-    `
+function getHtmlForDialog(i){
+    const pokemon = myPokeDex[i];
+    const name = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
+    const id = pokemon.id;
+    const imgUrl = pokemon.sprites.other["official-artwork"].front_default || pokemon.sprites.front_default;
+    const type = pokemon.types[0].type.name;
+    
+    return `
     <div class="cardHeader">
-                    <p>#NR</p>
-                    <p>name</p>
+                    <p>#${id}</p>
+                    <p>${name}</p>
                 </div>
                 <div class="cardImg">
-                    <img src="" alt="" srcset="">
+                    <img src="${imgUrl}" alt="${name}">
                 </div>
                 <div class="elemntStyle">
                     <img src="" alt="" srcset="">

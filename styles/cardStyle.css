@@ -1,11 +1,17 @@
 .itemCard {
     display: flex;
     flex-direction: column;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 16px;
+    border: 1px solid var(--border);
+    box-shadow: 0 0 20px rgba(123,44,191,0.15);
+    transition: 0.3s;
 }
-
+.itemCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(247,37,133,0.3);
+}
 .cardHeader {
     display: flex;
     flex-direction: row;
@@ -23,9 +29,9 @@
     margin: 0;
 }
 
-.cardHeader img {
-    width: 100%;
-    height: auto;
+.itemCard img {
+    width: 120px;
+    height: 120px;
     object-fit: cover;
 }
 
