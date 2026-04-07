@@ -7,10 +7,11 @@
     border: 1px solid var(--border);
     box-shadow: 0 0 20px rgba(123,44,191,0.15);
     transition: 0.3s;
+    max-width:fit-content;
 }
 .itemCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 30px rgba(247,37,133,0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(247,37,133,0.3);
 }
 .cardHeader {
     display: flex;
@@ -42,3 +43,8 @@
     padding: 12px;
 }
 
+.elemntStyle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

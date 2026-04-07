@@ -8,4 +8,49 @@
   padding: 24px;
   box-shadow: 0 0 40px rgba(247,37,133,0.25);
   border: 1px solid var(--border);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 400px;
+  color: white;
+}
+
+#dialogFunction::backdrop {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+.statRow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.statName {
+    width: 60px;
+}
+.cardImg img{
+    height: 120px;
+}
+progress {
+    flex-grow: 1;
+    height: 10px;
+    border-radius: 5px;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #333;
+    border-radius: 5px;
+}
+
+progress::-webkit-progress-value {
+    background-color: var(--accent);
+    border-radius: 5px;
+}
+
+.contentMenu p {
+    margin-bottom: 5px;
 }

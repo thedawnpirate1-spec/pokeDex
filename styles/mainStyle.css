@@ -20,6 +20,16 @@
     padding: 0;
 }
 
+body {
+    background-image: url(../assets/images/master_ball_background.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    width: 100%;
+    min-height: 100vh;
+}
+
 .maxSize{
     display: flex;
     max-width: 1200px;
@@ -45,25 +55,48 @@ header{
 header img{
     height: 120px;
 }
+
 .content{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
     gap: 16px;
+    padding-top: 16px;
+    width: 100%;
 }
+.low{
+    display: flex;
+    justify-content: center;
+    padding: 12px;
+}
+.loadBtn{
+    padding: 12px;
+    border: var(--border);
+    border-radius:  16px;
+    background: var(--bg-card);
+    color: var(--text-main);
+    box-shadow: var(--accent-soft);
+}
+.loadBtn:hover{
+    color: var();
+}
+
 footer{
     background: rgba(15,15,26,0.9);
     backdrop-filter: blur(10px);
-    border-top: 1px solid var(--border);
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer img{
     height: 120px;
 }
 
-body {
-    background-image: url(./assets/images/master_ball_background.png);
-    background-size: cover;
-    background-attachment: fixed;
-    background-color: var(--bg-dark);
-    color: var(--text-main);
-    width: 100%;
-    min-height: 100vh;
+.footerContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
 }
+

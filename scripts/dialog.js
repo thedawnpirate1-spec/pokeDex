@@ -2,9 +2,8 @@
 let myDialogContent = document.getElementById("dialogContent");
 let myDialogOpener = document.getElementById("dialogFunction");
 
-
 function openDialog(i){  
-    currentImage = i;         
+    currentCard = i;         
     myDialogContent.innerHTML = getHtmlForDialog(i);
     myDialogOpener.showModal();
 }
@@ -35,4 +34,11 @@ currentCard = currentCard-1;
     else {
         openDialog(myPokeDex.length-1);
     }
+}
+
+function showTab(tabId) {
+    document.getElementById('aboutContent').style.display = 'none';
+    document.getElementById('statsContent').style.display = 'none';
+    document.getElementById('evolutionContent').style.display = 'none';
+    document.getElementById(tabId).style.display = 'block';
 }

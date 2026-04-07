@@ -1,6 +1,8 @@
 let myPokeDex = [];
 let currentImage = 0;
 let myPhotoDiv = document.getElementById("mainContent");
+let currentOffset = 0;
+
 
 
 async function init(){
@@ -13,7 +15,7 @@ async function init(){
 async function getCharacters(){
 
     try{
-        const pokeCard =  await fetch("https://pokeapi.co/api/v2/pokemon?limit=20");
+        const pokeCard =  await fetch(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=${currentOffset}`);
         let cardSet=  await pokeCard.json();
         console.log(pokeCard);
         for(let i = 0; i< cardSet.results.length; i++){
@@ -25,11 +27,17 @@ async function getCharacters(){
     }
     catch(error){
         console.error("fetch-fehler");
+        let container = document.getElementById("mainContent");
         if (container) {
             container.innerHTML = "<p>SCHEIß SERVER</p>";
         }
     }
     renderGalaray();
+}
+
+async function loadMore() {
+    currentOffset += 20;
+    await getCharacters();
 }
 
 function renderGalaray(){
