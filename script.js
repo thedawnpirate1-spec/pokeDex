@@ -50,3 +50,17 @@ function renderGalaray(){
         myCardDiv.innerHTML += getHtmlForGalaryObject(i); 
     }
 }
+
+function dexSearch(){
+    let searchbar = document.getElementById("searchBar");
+    let searchInput = searchbar.value.toLowerCase();
+    let myCardDiv = document.getElementById("mainContent");
+    myCardDiv.innerHTML = "";
+
+    for(let i = 0; i < myPokeDex.length; i++){
+        if(myPokeDex[i].name.includes(searchInput)){
+            myCardDiv.innerHTML += getHtmlForGalaryObject(i);
+        }
+    }
+    
+}
