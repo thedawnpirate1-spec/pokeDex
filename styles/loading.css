@@ -20,6 +20,9 @@
             height: 100px;
             /* animation: name duration timing-function delay iteration-count direction fill-mode; */
             animation: rotate 2s linear infinite;
+            border: 1px solid var(--accent-soft);
+            border-radius: 50%;
+            background-color: var(--accent-soft);
         }
 
         @keyframes rotate {
