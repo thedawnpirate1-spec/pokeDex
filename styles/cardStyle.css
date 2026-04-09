@@ -3,48 +3,59 @@
     flex-direction: column;
     background: var(--bg-card);
     border-radius: 16px;
-    padding: 16px;
     border: 1px solid var(--border);
     box-shadow: 0 0 20px rgba(123,44,191,0.15);
     transition: 0.3s;
-    max-width:fit-content;
+    overflow: hidden;
+    width: 100%;
 }
 .itemCard:hover {
     transform: translateY(-5px);
     box-shadow: 0 0 30px rgba(247,37,133,0.3);
 }
+
 .cardHeader {
     display: flex;
-    flex-direction: row;
-    padding: 12px;
-    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 12px;
 }
 
-.cardHeader p:first-child {
-    text-align: start;
-    margin: 0;
-}
-
-.cardHeader p:nth-child(2) {
+.cardHeader p {
     text-align: center;
     margin: 0;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--text-main);
+    font-family: inherit;
+}
+
+.cardImg {
+    position: relative;
+    width: 100%;
+    padding: 24px 0; /* Extra space above and below image */
 }
 
 .itemCard img {
     width: 120px;
     height: 120px;
     object-fit: cover;
-}
-
-.cardHeader div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 12px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2; /* To sit on top of the split-bg layer */
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3)); /* soft shadow for the pokemon */
 }
 
 .elemntStyle{
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 16px 12px;
 }
+
+.typeIcon {
+    margin: 0 8px;
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.4));
+}
+

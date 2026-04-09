@@ -1,8 +1,9 @@
 let myPokeDex = [];
+let currentDisplayedPokemon = []; // Speichert alle aktuell sichtbaren Pokémon
 let currentImage = 0;
 let myPhotoDiv = document.getElementById("mainContent");
 let currentOffset = 0;
-
+const spinner = document.getElementById("spinnerContainer");
 
 
 async function init(){
@@ -13,7 +14,7 @@ async function init(){
 
 
 async function getCharacters(){
-
+    startLoadingScreen();
     try{
         const pokeCard =  await fetch(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=${currentOffset}`);
         let cardSet=  await pokeCard.json();
@@ -33,6 +34,7 @@ async function getCharacters(){
         }
     }
     renderGalaray();
+    endLoadingScreen();
 }
 
 async function loadMore() {
@@ -45,9 +47,11 @@ function renderGalaray(){
     if (!myCardDiv) return;
     
     myCardDiv.innerHTML = "";
+    currentDisplayedPokemon = []; // Leere das Array, wenn neu geladen wird
     
     for( let i = 0; i < myPokeDex.length; i++){
         myCardDiv.innerHTML += getHtmlForGalaryObject(i); 
+        currentDisplayedPokemon.push(i); // Speichere den Index des gezeigten Pokémon
     }
 }
 
@@ -56,11 +60,21 @@ function dexSearch(){
     let searchInput = searchbar.value.toLowerCase();
     let myCardDiv = document.getElementById("mainContent");
     myCardDiv.innerHTML = "";
+    currentDisplayedPokemon = []; // Leere das Array für die Suchergebnisse
 
     for(let i = 0; i < myPokeDex.length; i++){
         if(myPokeDex[i].name.includes(searchInput)){
             myCardDiv.innerHTML += getHtmlForGalaryObject(i);
+            currentDisplayedPokemon.push(i); // Speichere nur die gesuchten Pokémon
         }
     }
     
+}
+
+function startLoadingScreen() {
+    spinner.classList.remove("hidden");
+}
+
+function endLoadingScreen() {
+    spinner.classList.add("hidden");
 }

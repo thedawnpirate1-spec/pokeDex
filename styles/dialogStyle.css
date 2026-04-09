@@ -3,7 +3,7 @@
     135deg,
     #1A1A2E,
     #16213E
-  );
+    );
   border-radius: 20px;
   padding: 24px;
   box-shadow: 0 0 40px rgba(247,37,133,0.25);
@@ -32,8 +32,17 @@
 .statName {
     width: 60px;
 }
-.cardImg img{
-    height: 120px;
+#dialogFunction .cardImg {
+    padding: 24px 0;
+}
+
+#dialogFunction .cardImg img {
+    height: 180px; /* Make it a bit larger for the dialog */
+    object-fit: cover;
+    z-index: 2;
+    position: relative;
+    display: block;
+    margin: 0 auto;
 }
 progress {
     flex-grow: 1;
@@ -53,4 +62,20 @@ progress::-webkit-progress-value {
 
 .contentMenu p {
     margin-bottom: 5px;
+}
+
+.dialogHeaderBg {
+    margin: -24px -24px 0 -24px; 
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    background: var(--bg-card);
+}
+
+.elemntStyleDialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -15px; 
+    position: relative; 
+    z-index: 10;
 }
